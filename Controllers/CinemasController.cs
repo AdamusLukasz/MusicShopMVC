@@ -4,17 +4,17 @@ using ShopMVC.Data;
 
 namespace ShopMVC.Controllers
 {
-    public class ProducersController : Controller
+    public class CinemasController : Controller
     {
         private readonly AppDbContext _context;
 
-        public ProducersController(AppDbContext context)
+        public CinemasController(AppDbContext context)
         {
             _context = context;
         }
         public async Task<IActionResult> Index()
         {
-            var producers = await _context.Producers!.ToListAsync();
+            var producers = await _context.Cinemas!.ToListAsync();
             return View();
         }
     }
