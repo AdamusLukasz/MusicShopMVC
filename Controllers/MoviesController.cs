@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShopMVC.Data;
+using ShopMVC.Data.Enum;
+using ShopMVC.Models;
 
 namespace ShopMVC.Controllers
 {
@@ -14,6 +16,7 @@ namespace ShopMVC.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            
             var movies = await _context.Movies!.ToListAsync();
             return View(movies);
         }
