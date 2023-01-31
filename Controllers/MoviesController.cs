@@ -17,7 +17,11 @@ namespace ShopMVC.Controllers
         public async Task<IActionResult> Index()
         {
             
-            var movies = await _context.Movies!.ToListAsync();
+            var movies = await _context.Movies!
+                .Include(a => a.Cinema)
+                .OrderBy(a => a.Name)
+                .ToListAsync();
+
             return View(movies);
         }
     }
