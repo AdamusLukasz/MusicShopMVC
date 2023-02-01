@@ -17,9 +17,15 @@ namespace ShopMVC.Data.Services
             await _context.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Actors!.FirstOrDefaultAsync(a => a.Id == id);
+            if (result == null)
+            {
+                throw new Exception("Not found.");
+            }
+            _context.Actors!.Remove(result);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Actor>> GetAllAsync()
@@ -31,11 +37,11 @@ namespace ShopMVC.Data.Services
         public async Task<Actor> GetByIdAsync(int id)
         {
             var result = await _context.Actors!.FirstOrDefaultAsync(n => n.Id == id);
-            if (result == null)
-            {
-                throw new Exception("Not found.");
-            }
-            return result;
+            //if (result == null)
+            //{
+            //    throw new Exception("Not found.");
+            //}
+            return result!;
         }
 
         public async Task<Actor> UpdateAsync(int id, Actor newActor)
