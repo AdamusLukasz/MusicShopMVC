@@ -1,4 +1,5 @@
 ﻿using ShopMVC.Data.Base;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace ShopMVC.Models
