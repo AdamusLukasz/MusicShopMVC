@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ShopMVC.Data;
+using ShopMVC.Data.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(x
     => x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+builder.Services.AddScoped<IActorsService, ActorsService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
