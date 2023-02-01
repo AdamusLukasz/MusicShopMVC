@@ -8,7 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(x
     => x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+
+// Services configuration
+
 builder.Services.AddScoped<IActorsService, ActorsService>();
+builder.Services.AddScoped<IProducersService, ProducerService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

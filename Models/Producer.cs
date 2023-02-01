@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-
+using ShopMVC.Data.Base;
 
 namespace ShopMVC.Models
 {
-    public class Producer
+    public class Producer : IEntityBase
     {
         public int Id { get; set; }
         [Display(Name = "Profile Picture URL")]

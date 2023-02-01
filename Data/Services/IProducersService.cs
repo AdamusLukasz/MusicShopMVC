@@ -3,7 +3,7 @@ using ShopMVC.Models;
 
 namespace ShopMVC.Data.Services
 {
-    public interface IActorsService : IEntityBaseRepository<Actor>
+    public interface IProducersService : IEntityBaseRepository<Producer>
     {
     }
 }

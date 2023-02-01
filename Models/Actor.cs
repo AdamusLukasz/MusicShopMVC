@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ShopMVC.Data.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace ShopMVC.Models
 {
-    public class Actor
+    public class Actor : IEntityBase
     {
         public int Id { get; set; }
 
