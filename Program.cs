@@ -13,6 +13,7 @@ builder.Services.AddDbContext<AppDbContext>(x
 
 builder.Services.AddScoped<IActorsService, ActorsService>();
 builder.Services.AddScoped<IProducersService, ProducerService>();
+builder.Services.AddScoped<ICinemasService, CinemasService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

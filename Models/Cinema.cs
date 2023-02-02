@@ -11,10 +11,17 @@ namespace ShopMVC.Models
     public class Cinema : IEntityBase
     {
         public int Id { get; set; }
+
         [Display(Name = "Cinema Logo")]
+        [Required(ErrorMessage = "Cinema logo is reguired")]
         public string? Logo { get; set; }
+
         [Display(Name = "Cinema Name")]
+        [Required(ErrorMessage = "Cinema name is reguired")]
         public string? Name { get; set; }
+
+        [Display(Name = "Description")]
+        [Required(ErrorMessage = "Cinema description is reguired")]
         public string? Description { get; set; }
 
         //Relationships
